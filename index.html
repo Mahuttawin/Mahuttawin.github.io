@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rungnapa & Mahatwin Digital Wedding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Mali:wght@300;400;700&family=Noto+Serif+Thai:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #d4af37;
+            --secondary: #fdfaf6;
+        }
+        body {
+            font-family: 'Mali', cursive;
+            background-color: var(--secondary);
+            color: #333;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 2rem;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .photobooth-frame {
+            border: 10px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+        }
+        #photobooth-slider {
+            display: flex;
+            transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col items-center justify-center text-center p-6 relative overflow-hidden">
+        <div class="absolute inset-0 z-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="gold" stroke-width="0.5"/></svg>
+        </div>
+        
+        <div class="z-10 animate-fade-in">
+            <p class="uppercase tracking-[0.3em] text-sm mb-4 text-gray-500">The Wedding of</p>
+            <h1 class="text-6xl md:text-9xl font-script gold-gradient-text mb-6">Rungnapa <span class="text-4xl text-gray-400">&</span> Mahatwin</h1>
+            <p class="text-xl md:text-2xl font-serif-thai text-gray-600 mb-8">รุ่งนภา และ มหัตม์วิน</p>
+            
+            <!-- Countdown Display -->
+            <div id="countdown" class="flex flex-wrap justify-center gap-4 mb-12">
+                <div class="glass-card p-4 min-w-[80px] md:min-w-[100px]">
+                    <span id="days" class="text-3xl md:text-4xl font-bold block">00</span>
+                    <span class="text-xs">DAYS</span>
+                </div>
+                <div class="glass-card p-4 min-w-[80px] md:min-w-[100px]">
+                    <span id="hours" class="text-3xl md:text-4xl font-bold block">00</span>
+                    <span class="text-xs">HRS</span>
+                </div>
+                <div class="glass-card p-4 min-w-[80px] md:min-w-[100px]">
+                    <span id="mins" class="text-3xl md:text-4xl font-bold block">00</span>
+                    <span class="text-xs">MINS</span>
+                </div>
+                <div class="glass-card p-4 min-w-[80px] md:min-w-[100px] border-[#d4af37]">
+                    <span id="secs" class="text-3xl md:text-4xl font-bold block gold-gradient-text">00</span>
+                    <span class="text-xs font-bold text-[#d4af37]">SECS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photobooth Animation Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl font-serif-thai mb-10 gold-gradient-text italic font-bold">Our Sweet Moments</h2>
+            <div class="relative inline-block photobooth-frame bg-gray-100 overflow-hidden max-w-[320px] md:max-w-md">
+                <div id="photobooth-slider">
+                    <img src="https://img5.pic.in.th/file/secure-sv1/ResizePic-96.jpg" class="w-full h-[450px] object-cover flex-shrink-0" alt="Moment 1">
+                    <img src="https://img2.pic.in.th/ResizePic-85.jpg" class="w-full h-[450px] object-cover flex-shrink-0" alt="Moment 2">
+                    <img src="https://img5.pic.in.th/file/secure-sv1/ResizePic-81.jpg" class="w-full h-[450px] object-cover flex-shrink-0" alt="Moment 3">
+                </div>
+                <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                    <div id="dot-0" class="w-2 h-2 rounded-full bg-[#d4af37]"></div>
+                    <div id="dot-1" class="w-2 h-2 rounded-full bg-white opacity-50"></div>
+                    <div id="dot-2" class="w-2 h-2 rounded-full bg-white opacity-50"></div>
+                </div>
+            </div>
+            <p class="mt-6 text-gray-400 italic font-script text-xl">#RungnapaMahatwin2026</p>
+        </div>
+    </section>
+
+    <!-- Location & Google Maps -->
+    <section class="py-20 bg-[#f9f5f0]">
+        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="text-4xl font-serif-thai mb-6">Location</h3>
+                <p class="text-lg mb-4 font-bold">วิน เอ็นจิเนียริ่ง <br>591 หมู่ที่ 4 ตำบลหนองจะบก<br>อำเภอเมืองนครราชสีมา จ.นครราชสีมา 30000</p>
+                <p class="mb-8 text-gray-600">วันอาทิตย์ที่ 22 พฤศจิกายน 2026<br>เริ่มพิธีเช้าเวลา 09:00 น.</p>
+                <a href="https://maps.app.goo.gl/heWGS3yaVoDX6fQ1A" target="_blank" class="inline-block bg-[#d4af37] text-white px-10 py-4 rounded-full shadow-xl hover:bg-black transition">เปิดแผนที่นำทาง</a>
+            </div>
+            <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white h-80">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3855.07166185863!2d102.05943261536293!3d14.933391289591465!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31194b304044458f%3A0x868b209d6c44274c!2zNTkxIE1vbyA0LCBOb25nIEphIEJvaywgTXVlYW5nIE5ha2hvbiBSYXRjaGFzaW1hLCBOYWtob24gUmF0Y2hhc2ltYSAzMDAwMA!5e0!3m2!1sth!2sth!4v1700000000000" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section - Updated to Button Link -->
+    <section class="py-20">
+        <div class="max-w-xl mx-auto px-6 glass-card p-12 text-center shadow-xl">
+            <h3 class="text-3xl font-serif-thai mb-4">Are You Coming?</h3>
+            <p class="text-gray-500 mb-8 font-serif-thai leading-relaxed">
+                เพื่อให้เจ้าภาพสามารถเตรียมการต้อนรับได้อย่างทั่วถึง<br>
+                กรุณาแจ้งความประสงค์เข้าร่วมงานและลงทะเบียนผ่านลิงก์ด้านล่าง
+            </p>
+            
+            <!-- แก้ไขลิงก์ Google Form ของคุณที่ href="..." -->
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLScZN0BdpFDyBGqlXOP-qTLuIZz2SMstt7tMgoKbmScWnUHKCQ/viewform?usp=dialog" 
+               target="_blank" 
+               class="inline-flex items-center justify-center w-full bg-black text-white py-5 px-8 rounded-2xl font-bold text-lg hover:bg-[#d4af37] transform hover:scale-[1.02] transition-all duration-300 shadow-lg">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                ลงทะเบียนยืนยันเข้าร่วมงาน
+            </a>
+            
+            <p class="mt-6 text-sm text-gray-400 font-serif-thai italic">
+                * กรุณายืนยันภายในวันที่ 1 เมษายน 2026
+            </p>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center text-gray-400 text-xs">
+        &copy; 2026 Rungnapa & Mahatwin Wedding.
+    </footer>
+
+    <script>
+        // Countdown Logic
+        const weddingDate = new Date("April 26, 2026 09:00:00").getTime();
+        
+        function updateTimer() {
+            const now = new Date().getTime();
+            const diff = weddingDate - now;
+
+            if (diff <= 0) {
+                document.getElementById('countdown').innerHTML = '<span class="text-2xl font-bold gold-gradient-text">ถึงวันสำคัญแล้ว!</span>';
+                return;
+            }
+
+            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const s = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = d.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = h.toString().padStart(2, '0');
+            document.getElementById('mins').innerText = m.toString().padStart(2, '0');
+            document.getElementById('secs').innerText = s.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        // Photobooth Slider
+        let currentSlide = 0;
+        const totalSlides = 3;
+        const slider = document.getElementById('photobooth-slider');
+        
+        function moveSlider() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            for(let i=0; i<totalSlides; i++) {
+                const dot = document.getElementById(`dot-${i}`);
+                if (i === currentSlide) {
+                    dot.classList.remove('opacity-50', 'bg-white');
+                    dot.classList.add('bg-[#d4af37]');
+                } else {
+                    dot.classList.remove('bg-[#d4af37]');
+                    dot.classList.add('bg-white', 'opacity-50');
+                }
+            }
+        }
+        setInterval(moveSlider, 4000);
+    </script>
+</body>
+</html>
